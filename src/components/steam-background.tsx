@@ -48,6 +48,8 @@ export default function SteamBackground({ active = true, className = "" }: Steam
       }
     }
     textureContext.putImageData(pixels, 0, 0);
+    const cloudPattern = context.createPattern(texture, "repeat");
+    if (!cloudPattern) return;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let frame = 0, previous = 0, elapsed = 0, visible = false;
@@ -60,11 +62,11 @@ export default function SteamBackground({ active = true, className = "" }: Steam
         const x = ((elapsed * (layer === 1 ? -6 : 9) + layer * 173) % size + size) % size;
         const y = ((-elapsed * (5 + layer * 2) + layer * 227) % size + size) % size;
         context.globalAlpha = layer === 0 ? 0.85 : 0.5;
-        for (let row = -1; row * size + y < height; row++) {
-          for (let col = -1; col * size + x < width; col++) {
-            context.drawImage(texture, col * size + x, row * size + y, size, size);
-          }
-        }
+        // Fill each layer in one pass. Separate drawImage tiles expose dark
+        // antialiasing seams when their edges land between canvas pixels.
+        cloudPattern.setTransform(new DOMMatrix().translate(x, y).scale(size / 256));
+        context.fillStyle = cloudPattern;
+        context.fillRect(0, 0, width, height);
       }
     };
     const tick = (now: number) => {

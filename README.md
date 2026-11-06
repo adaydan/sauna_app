@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ЖАР / ZHAR
 
-## Getting Started
+A Russian banya concept storefront built with React and Next.js. The dark interface pairs a procedural steam background with animated orbital graphics, React Bits text reveals, spotlight cards, and spring-animated category filters.
 
-First, run the development server:
+## Run locally
 
-```bash
+```sh
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Responsive layout and mobile navigation
+- Canvas steam that pauses offscreen and respects reduced-motion preferences
+- Product details, category filtering, and a shopping bag saved on this device
+- React Bits components configured through the shadcn registry
 
-## Learn More
+This is a concept storefront. Payments, shipping, and newsletter delivery are not connected.
 
-To learn more about Next.js, take a look at the following resources:
+## Earlier design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The warm steam version is saved in `.design-checkpoints/warm-steam`. Restore it with:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```sh
+sh .design-checkpoints/warm-steam/restore.sh
+```

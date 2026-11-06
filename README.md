@@ -17,7 +17,9 @@ Open http://localhost:3000.
 npm run build
 ```
 
-The generated `out/` folder contains the static site. Publish its contents to GitHub Pages at `https://adaydan.github.io/sauna_app/`. Production builds use the `/sauna_app` base path; local development continues to use `http://localhost:3000`.
+Every push to `main` runs `.github/workflows/pages.yml`, builds the current source, and deploys the generated `out/` folder to `https://adaydan.github.io/sauna_app/`. GitHub Pages must use **GitHub Actions** as its publishing source. The older committed `docs/` export is no longer used for deployment.
+
+Production builds use the `/sauna_app` base path; local development continues to use `http://localhost:3000`.
 
 The export includes `.nojekyll` so GitHub Pages serves the `_next` assets. Use a static file server to preview the export; `npm start` is for server builds and does not serve this export.
 

@@ -1,4 +1,4 @@
-:HL["/sauna_app/_next/static/chunks/22mdgkwibxj09.css","style"]
+:HL["/sauna_app/_next/static/chunks/3e-9k4wm361yf.css","style"]
 :HL["/sauna_app/_next/static/chunks/1fgrluaiqk_hz.css","style"]
 1:[["children",{"s":"__PAGE__","h":160}]]
-0:{"b":"p16qqNNrms24LHO8hVOHc","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"gw4gObg-EKwEjR_kSXi14","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

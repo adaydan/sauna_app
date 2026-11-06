@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  output: "export",
+  // GitHub project Pages uses this prefix; local development stays at /.
+  basePath: process.env.NODE_ENV === "production" ? "/sauna_app" : "",
+  trailingSlash: true,
   turbopack: {
     rules: {
       "*.css": {

@@ -11,6 +11,16 @@ npm run dev
 
 Open http://localhost:3000.
 
+## Static build for GitHub Pages
+
+```sh
+npm run build
+```
+
+The generated `out/` folder contains the static site. Publish its contents to GitHub Pages at `https://adaydan.github.io/sauna_app/`. Production builds use the `/sauna_app` base path; local development continues to use `http://localhost:3000`.
+
+The export includes `.nojekyll` so GitHub Pages serves the `_next` assets. Use a static file server to preview the export; `npm start` is for server builds and does not serve this export.
+
 ## Features
 
 - Responsive layout and mobile navigation
